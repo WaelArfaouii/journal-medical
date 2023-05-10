@@ -1,0 +1,23 @@
+.attach-files-container {
+   .attach-files-header {
+      margin-top: 20px;
+      border: 1px solid black;
+      border-radius: 10px 10px 0 0;
+      padding: 20px 0;
+
+      span {
+         display: inline-block;
+         width: calc(100% / 4);
+         text-align: center;
+         color: var(--main-color);
+      }
+   }
+
+   .attach-files-form {
+      display: flex;
+      flex-direction: column;
+      button {
+         margin-top: 20px;
+      }
+   }
+}

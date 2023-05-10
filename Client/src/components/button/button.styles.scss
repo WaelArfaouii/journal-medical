@@ -1,0 +1,41 @@
+.button-container {
+   width: max-content;
+   padding: 10px 20px;
+   border-radius: 6px;
+   cursor: pointer;
+   font-size: 18px;
+   letter-spacing: 1px;
+   border: none;
+   color: white;
+   transition: .3s;
+}
+
+.button-container.main-button {
+   background-color: var(--secondary-color);
+
+   &:hover {
+      background-color: var(--third-color);
+   }
+}
+
+.button-container.second-button {
+   background-color: var(--main-color);
+   font-size: 16px;
+   padding: 8px 15px;
+
+   &:hover {
+      background-color: var(--third-color);
+   }
+}
+
+.button-container.third-button {
+   background-color: white;
+   border: 1px solid black;
+   color: black;
+   font-size: 16px;
+   padding: 7px 15px;
+
+   &:hover {
+      color: white;
+   }
+}

@@ -1,0 +1,91 @@
+@import-normalize;
+
+:root {
+   --main-color: #449342;
+   --secondary-color: #2ba6ec;
+   --third-color: #02353C;
+   --background-main-color: #f3f3f3;
+   --main-transition: 0.5s;
+   --main-gap: 40px;
+   --main-box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+   --main-line-height: 1.7;
+}
+
+*,
+*::before,
+*::after {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   outline: none;
+   border: none;
+}
+
+html {
+   scroll-behavior: smooth;
+}
+
+*::-webkit-scrollbar-track {
+   -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+   background-color: #F5F5F5;
+   border-radius: 10px;
+}
+
+*::-webkit-scrollbar {
+   width: 10px;
+   background-color: #F5F5F5;
+}
+
+*::-webkit-scrollbar-thumb {
+   border-radius: 10px;
+   background: rgb(63, 208, 201);
+   background: linear-gradient(75deg, rgba(63, 208, 201, 1) 20%, rgba(68, 147, 66, 1) 99%);
+}
+
+ul {
+   list-style: none;
+}
+
+a {
+   text-decoration: none;
+   color: black;
+}
+
+body {
+   font-family: 'Open Sans', sans-serif;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+/* Small  */
+
+@media (min-width: 768px) {
+   .container {
+      width: 750px;
+   }
+}
+
+/* Medium */
+
+@media (min-width: 992px) {
+   .container {
+      width: 970px;
+   }
+}
+
+/* Large  */
+
+@media (min-width: 1200px) {
+   .container {
+      width: 1170px;
+   }
+}
+
+/* End global rules  */

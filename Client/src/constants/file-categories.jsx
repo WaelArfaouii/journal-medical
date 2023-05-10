@@ -1,0 +1,2 @@
+const fileCategories = ["Manuscript", "Declaration of interests", "Cover letter", "Title page", "Figure", "Table", "Highlights", "Video", "Graphical abstract", "Supplementary material"];
+export default fileCategories;
