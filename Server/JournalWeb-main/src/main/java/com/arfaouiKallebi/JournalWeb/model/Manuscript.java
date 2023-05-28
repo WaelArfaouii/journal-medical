@@ -29,7 +29,7 @@ public class Manuscript extends AbstractEntity {
     @ManyToMany(fetch = FetchType.EAGER  , cascade = CascadeType.PERSIST)
     @Column(name = "authors")
     private List<Author> authors ;
-    private String status = "processed" ;
+    private String status = "incompleted" ;
     @OneToOne(mappedBy = "manuscript")
     private Invitation invitation;
 }

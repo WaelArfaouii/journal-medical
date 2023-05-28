@@ -49,7 +49,7 @@ public class EditorController {
         return invitationService.sendInvitation(idedit ,idrev ,idman , invitation) ;
 
     }
-    @GetMapping("manuscript/{idman}")
+    @GetMapping("manuscripts/reject/{idman}")
     public ResponseEntity<?> rejectManuscipt(@PathVariable Long idman ){
         return invitationService.rejectManuscript(idman);
     }

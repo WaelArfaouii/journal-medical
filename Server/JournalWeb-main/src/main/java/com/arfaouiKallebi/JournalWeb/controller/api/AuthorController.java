@@ -64,24 +64,24 @@ public class AuthorController {
     public List<ManuscriptDTO> getWaitingManuscripts(@PathVariable Long idauth){
         return manuscriptService.getWaitingManuscripts(idauth);
     }
-    @GetMapping("manusccripts/{idman}/items")
+    @GetMapping("manuscripts/{idman}/items")
     public List<ItemDTO> getItems(@PathVariable Long idman){
         return itemService.getItems(idman) ;
     }
-    @GetMapping("manusccripts/{idman}/items/{id}")
+    @GetMapping("manuscripts/{idman}/items/{id}")
     public ItemDTO getItemById(@PathVariable Long id){
         return itemService.findById(id) ;
     }
-    @DeleteMapping("manusccripts/{idman}/items/delete/{id}")
+    @DeleteMapping("manuscripts/{idman}/items/delete/{id}")
     public ResponseEntity<?> deleteItemById(@PathVariable Long id){
         return itemService.deleteById(id);
     }
-    @PostMapping("manusccripts/{idman}/items/save")
+    @PostMapping("manuscripts/{idman}/items/save")
     public ItemDTO saveItem( @PathVariable Long idman , @RequestParam("model") String item , @RequestParam("file") MultipartFile file) throws Exception {
         Item itemObj = objectMapper.readValue(item ,Item.class) ;
         ItemDTO itemDTO = ItemDTO.fromEntity(itemObj) ;
         return itemService.save( idman,  itemDTO , file); }
-    @GetMapping("manusccripts/{idman}/items/{iditem}/download/{fileId}")
+    @GetMapping("manuscripts/{idman}/items/{iditem}/download/{fileId}")
     public ResponseEntity<Resource> downloadFile(@PathVariable Long iditem , @PathVariable String fileId) throws Exception {
         Attachment attachment = null;
 
@@ -93,19 +93,19 @@ public class AuthorController {
                                 + "\"")
                 .body(new ByteArrayResource(attachment.getData()));
     }
-    @GetMapping("manusccripts/{idman}/comments")
+    @GetMapping("manuscripts/{idman}/comments")
     public List<CommentDTO> getComments(@PathVariable Long idman ){
         return commentService.getComments(idman) ;
     }
-    @DeleteMapping("manusccripts/{idman}/comments/delete/{id}")
+    @DeleteMapping("manuscripts/{idman}/comments/delete/{id}")
     public ResponseEntity<?> deleteCommentById( @PathVariable Long id){
         return commentService.deleteById(id);
     }
-    @PostMapping("manusccripts/{idman}/comments/save")
+    @PostMapping("manuscripts/{idman}/comments/save")
     public CommentDTO saveComment(@PathVariable Long idman ,@RequestBody CommentDTO comment){
         return commentService.saveComment(idman , comment) ;
     }
-    @GetMapping("manusccripts/{idman}/authors/add/{author}")
+    @GetMapping("manuscripts/{idman}/authors/add/{author}")
     public List<AuthorDTO> addAuthor(@PathVariable Long idman , @PathVariable Long author){
         return authorService.addAuthor(idman , author) ;
     }

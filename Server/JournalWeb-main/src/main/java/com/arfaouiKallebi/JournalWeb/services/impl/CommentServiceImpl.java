@@ -49,6 +49,7 @@ public class CommentServiceImpl implements CommentService {
         Comment com = CommentDTO.toEntity(commentDTO) ;
         com.setManuscript(manuscriptService.findById(idman));
         Comment comment = commentRepository.save(com) ;
+        manuscriptService.findById(idman).setStatus("Processed");
         return CommentDTO.fromEntity(comment);
     }
 
